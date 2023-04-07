@@ -10,7 +10,7 @@ import service_order.service_order.domain.Person;
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Integer> {
     
-	@Query("SELECT obj FROM Pessoa obj WHERE obj.cpf =:cpf")
+	@Query("SELECT obj FROM Person obj WHERE obj.cpf =:cpf")
 	Person findByCPF(@Param("cpf") String cpf);
-    
+
 }

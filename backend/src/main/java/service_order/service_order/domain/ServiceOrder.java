@@ -23,10 +23,10 @@ public class ServiceOrder {
     private Integer id;
 
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
-	private LocalDateTime dataAbertura;
+	private LocalDateTime openingDate;
 
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
-	private LocalDateTime dataFechamento;
+	private LocalDateTime closingDate;
 
 	private Integer priority;
 	private String observations;
@@ -41,7 +41,7 @@ public class ServiceOrder {
     private Customer customer;
 
 	public ServiceOrder() {
-		this.setDataAbertura(LocalDateTime.now());
+		this.setOpeningDate(LocalDateTime.now());
 		this.setPriority(Priority.BAIXA);
 		this.setStatus(Status.ABERTO);
 	}
@@ -49,7 +49,7 @@ public class ServiceOrder {
 	public ServiceOrder(Integer id, Priority Priority, String observations, Status status, Employee employee,
 			Customer customer) {
 		this.id = id;
-		this.setDataAbertura(LocalDateTime.now());
+		this.setOpeningDate(LocalDateTime.now());
 		this.priority = (Priority == null) ? 0 : Priority.getCod();
 		this.observations = observations;
 		this.status = (status == null) ? 0 : status.getCod();
@@ -65,20 +65,20 @@ public class ServiceOrder {
 		this.id = id;
 	}
 
-	public LocalDateTime getDataAbertura() {
-		return dataAbertura;
+	public LocalDateTime getOpeningDate() {
+		return openingDate;
 	}
 
-	public void setDataAbertura(LocalDateTime dataAbertura) {
-		this.dataAbertura = dataAbertura;
+	public void setOpeningDate(LocalDateTime openingDate) {
+		this.openingDate = openingDate;
 	}
 
-	public LocalDateTime getDataFechamento() {
-		return dataFechamento;
+	public LocalDateTime getClosingDate() {
+		return closingDate;
 	}
 
-	public void setDataFechamento(LocalDateTime dataFechamento) {
-		this.dataFechamento = dataFechamento;
+	public void setClosingDate(LocalDateTime closingDate) {
+		this.closingDate = closingDate;
 	}
 
 	public Priority getPriority() {

@@ -19,46 +19,49 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import service_order.service_order.domain.Employee;
-import service_order.service_order.dtos.EmployeeDTO;
-import service_order.service_order.services.EmployeeService;
+import service_order.service_order.domain.Customer;
+import service_order.service_order.dtos.CustomerDTO;
+import service_order.service_order.services.CustomerService;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping(value = "tecnicos")
-public class EmployeeResource {
+@RequestMapping(value = "clientes")
+public class CustomerResource {
     
-    @Autowired
-	private EmployeeService employeeService;
+	@Autowired
+	private CustomerService customerService;
 
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<EmployeeDTO> findById(@PathVariable Integer id) {
-		EmployeeDTO objDTO = new EmployeeDTO(employeeService.findById(id));
+	public ResponseEntity<CustomerDTO> findById(@PathVariable Integer id) {
+		CustomerDTO objDTO = new CustomerDTO(customerService.findById(id));
 		return ResponseEntity.ok(objDTO);
 	}
 
 	@GetMapping
-	public ResponseEntity<List<EmployeeDTO>> findAll() {
-		List<EmployeeDTO> listaDTO = employeeService.findAll();
+	public ResponseEntity<List<CustomerDTO>> findAll() {
+		List<CustomerDTO> listaDTO = customerService.findAll().stream().map(obj -> new CustomerDTO(obj))
+				.collect(Collectors.toList());
+
 		return ResponseEntity.ok().body(listaDTO);
 	}
 
 	@PostMapping
-	public ResponseEntity<EmployeeDTO> create(@Valid @RequestBody EmployeeDTO objDTO) {
-		Employee newObj = employeeService.create(objDTO);
+	public ResponseEntity<CustomerDTO> create(@Valid @RequestBody CustomerDTO objDTO) {
+		Customer newObj = customerService.create(objDTO);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
 		return ResponseEntity.created(uri).build();
 	}
-	
+
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<EmployeeDTO> update(@PathVariable Integer id, @Valid @RequestBody EmployeeDTO objDTO){
-		EmployeeDTO newDTO = new EmployeeDTO(employeeService.update(id, objDTO));
+	public ResponseEntity<CustomerDTO> update(@PathVariable Integer id, @Valid @RequestBody CustomerDTO objDTO){
+		CustomerDTO newDTO = new CustomerDTO(customerService.update(id, objDTO));
 		return ResponseEntity.ok().body(newDTO);
 	}
 
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<Void> deleteById(@PathVariable Integer id) {
-		employeeService.deleteById(id);
-		return ResponseEntity.noContent().build();
+		customerService.deleteById(id);
+		return ResponseEntity.noContent().build(); 
 	}
+
 }
