@@ -1,4 +1,4 @@
-export interface Employee {
+export interface Person {
     id: any;
     name: String;
     cpf: String;

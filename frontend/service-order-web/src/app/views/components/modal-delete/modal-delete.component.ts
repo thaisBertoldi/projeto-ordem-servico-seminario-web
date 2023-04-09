@@ -1,10 +1,12 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { CustomerService } from 'src/app/services/customer.service';
 import { EmployeeService } from 'src/app/services/employee.service';
 
 export interface DialogData {
-  id: Number
+  id: Number,
+  person: String
 }
 
 @Component({
@@ -17,16 +19,20 @@ export class ModalDeleteComponent {
 
   constructor(
     public dialogRef: MatDialogRef<ModalDeleteComponent>,
-    private service : EmployeeService,
-    private router: Router,
+    private serviceEmployee : EmployeeService,
+    private serviceCustomer: CustomerService,
     @Inject(MAT_DIALOG_DATA) public data: DialogData
   ) {}
 
   delete(id: Number): void {
-    this.service.delete(id).subscribe(resposta => {
-      this.service.message('Tecnico deletado com sucesso!')
+    const service = this.data.person === 'employee' ? this.serviceEmployee : this.serviceCustomer
+    service.delete(id).subscribe(resposta => {
+      service.message('Tecnico deletado com sucesso!')
+      setTimeout(() => {
+        location.reload();
+      }, 2000);
     }, err => {
-      this.service.message(err.error.message);
+      service.message(err.error.message);
     })
   }
 

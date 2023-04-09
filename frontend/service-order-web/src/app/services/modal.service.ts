@@ -11,10 +11,10 @@ export class ModalService {
     public dialog: MatDialog
   ) { }
 
-  open(id: Number) {
+  open(id: Number, person: String) {
     const dialogRef = this.dialog.open(ModalDeleteComponent, {
       width: '350px',
-      data: { id: id }
+      data: { id: id, person: person }
     });
 
     dialogRef.afterClosed().subscribe(result => {});

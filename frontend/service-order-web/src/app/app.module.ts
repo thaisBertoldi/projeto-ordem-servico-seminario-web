@@ -28,6 +28,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmployeeUpdateComponent } from './views/components/employee/employee-update/employee-update.component';
 import { ModalDeleteComponent } from './views/components/modal-delete/modal-delete.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CustomerReadComponent } from './views/components/customer/customer-read/customer-read.component';
+import { CustomerCreateComponent } from './views/components/customer/customer-create/customer-create.component';
+import { CustomerUpdateComponent } from './views/components/customer/customer-update/customer-update.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     EmployeeReadComponent,
     EmployeeCreateComponent,
     EmployeeUpdateComponent,
-    ModalDeleteComponent
+    ModalDeleteComponent,
+    CustomerReadComponent,
+    CustomerCreateComponent,
+    CustomerUpdateComponent,
   ],
   imports: [
     BrowserModule,

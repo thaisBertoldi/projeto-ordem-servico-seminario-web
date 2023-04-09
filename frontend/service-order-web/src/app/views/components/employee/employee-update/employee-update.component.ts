@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Employee } from 'src/app/models/Employee';
+import { Person } from 'src/app/models/Interfaces';
 import { EmployeeService } from 'src/app/services/employee.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class EmployeeUpdateComponent implements OnInit {
 
   id_tec = '';
 
-  tecnico: Employee = {
+  tecnico: Person = {
     id: "",
     name: "",
     cpf: "",

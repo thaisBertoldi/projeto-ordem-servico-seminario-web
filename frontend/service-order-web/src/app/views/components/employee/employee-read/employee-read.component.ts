@@ -2,7 +2,7 @@ import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { Employee } from 'src/app/models/Employee';
+import { Person } from 'src/app/models/Interfaces';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { ModalService } from 'src/app/services/modal.service';
 
@@ -12,10 +12,10 @@ import { ModalService } from 'src/app/services/modal.service';
   styleUrls: ['./employee-read.component.css']
 })
 export class EmployeeReadComponent implements AfterViewInit {
-  employees: Employee[] = [];
+  employees: Person[] = [];
 
   displayedColumns: string[] = ['id', 'name', 'cpf', 'phone', 'action'];
-  dataSource = new MatTableDataSource<Employee>(this.employees);
+  dataSource = new MatTableDataSource<Person>(this.employees);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -33,7 +33,7 @@ export class EmployeeReadComponent implements AfterViewInit {
     this.service.findAll().subscribe(
       (res) => {
         this.employees = res;
-        this.dataSource = new MatTableDataSource<Employee>(this.employees);
+        this.dataSource = new MatTableDataSource<Person>(this.employees);
         this.dataSource.paginator = this.paginator;
       }, (err) => {
       console.log(err);
@@ -44,7 +44,7 @@ export class EmployeeReadComponent implements AfterViewInit {
     this.router.navigate(['employee/create'])
   }
 
-  openModal(id: Number): void {
-    this.modal.open(id);
+  openModal(id: Number, person: String): void {
+    this.modal.open(id, person);
   }
 }

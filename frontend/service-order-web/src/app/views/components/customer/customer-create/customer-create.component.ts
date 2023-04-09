@@ -1,42 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Person } from 'src/app/models/Interfaces';
-import { EmployeeService } from 'src/app/services/employee.service';
+import { CustomerService } from 'src/app/services/customer.service';
 
 @Component({
-  selector: 'app-employee-create',
-  templateUrl: './employee-create.component.html',
-  styleUrls: ['./employee-create.component.css']
+  selector: 'app-customer-create',
+  templateUrl: './customer-create.component.html',
+  styleUrls: ['./customer-create.component.css']
 })
-export class EmployeeCreateComponent {
+export class CustomerCreateComponent {
 
-  tecnico: Person = {
+  cliente: Person = {
     id: "",
     name: "",
     cpf: "",
     phone: "",
   };
 
-  
   name = new FormControl('', [Validators.minLength(5)])
   cpf = new FormControl('', [Validators.minLength(11)])
   phone = new FormControl('', [Validators.minLength(11)])
 
   constructor(
-    private router : Router,
-    private service: EmployeeService
-  ) { }
+    private router: Router,
+    private service: CustomerService
+  ) {}
 
-  cancel(): void{
-    this.router.navigate(['/tecnicos'])
+  cancel(): void {
+    this.router.navigate(["/customer"]);
   }
 
   create(): void {
-    this.service.create(this.tecnico).subscribe(
+    this.service.create(this.cliente).subscribe(
       (resposta) => {
-        this.router.navigate(["employee"]);
-        this.service.message("Tecnico criado com sucesso!");
+        this.router.navigate(["/customer"]);
+        this.service.message("Cliente criado com sucesso!");
       },
       (err) => {
         if (err.error.message.match("já cadastrado")) {

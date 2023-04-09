@@ -1,0 +1,34 @@
+.container {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+table {
+    width: 100%;
+}
+
+#edit {
+    color: rgb(62, 62, 223);
+}
+
+.create {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.create h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.create button {
+    width: 20%;
+}
+
+.div-button-create {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 35px;
+}
