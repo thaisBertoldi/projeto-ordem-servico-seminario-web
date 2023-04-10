@@ -1,5 +1,47 @@
-mat-card {
-    width: 80%;
-    height: 50%;
-    margin: 1rem auto 0 auto;
+.div-cards {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 60px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  height: 150px;
+  gap: 15px;
+  color: white;
+  cursor: pointer;
+}
+
+mat-icon {
+  font-size: 35px;
+}
+
+.card1 {
+  background-color: rgb(40, 183, 119);
+}
+
+.card2 {
+  background-color: rgb(34, 85, 164);
+}
+
+.card3 {
+  background-color: rgb(254, 184, 71);
+}
+
+.div-statistics {
+  height: 50%;
+  margin-left: 60px;
+  margin-top: 2%;
+  display: flex;
+}
+
+.demo-inline-calendar-card {
+  width: 300px;
+}
+
+.margin-topics {
+  margin: 8px;
 }
