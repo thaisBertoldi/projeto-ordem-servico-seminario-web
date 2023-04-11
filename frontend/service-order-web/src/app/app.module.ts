@@ -31,6 +31,14 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CustomerReadComponent } from './views/components/customer/customer-read/customer-read.component';
 import { CustomerCreateComponent } from './views/components/customer/customer-create/customer-create.component';
 import { CustomerUpdateComponent } from './views/components/customer/customer-update/customer-update.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatSliderModule} from '@angular/material/slider';
+import { OsReadComponent } from './views/components/os/os-read/os-read.component';
+import { OsCreateComponent } from './views/components/os/os-create/os-create.component';
+import { OsUpdateComponent } from './views/components/os/os-update/os-update.component';
+import { OsViewsComponent } from './views/components/os/os-views/os-views.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { OsClosedComponent } from './views/components/os/os-closed/os-closed.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +54,11 @@ import { CustomerUpdateComponent } from './views/components/customer/customer-up
     CustomerReadComponent,
     CustomerCreateComponent,
     CustomerUpdateComponent,
+    OsReadComponent,
+    OsCreateComponent,
+    OsUpdateComponent,
+    OsViewsComponent,
+    OsClosedComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +79,11 @@ import { CustomerUpdateComponent } from './views/components/customer/customer-up
     MatSnackBarModule,
     AppRoutingModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSliderModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
