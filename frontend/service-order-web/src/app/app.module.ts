@@ -39,6 +39,7 @@ import { OsUpdateComponent } from './views/components/os/os-update/os-update.com
 import { OsViewsComponent } from './views/components/os/os-views/os-views.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { OsClosedComponent } from './views/components/os/os-closed/os-closed.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import { OsClosedComponent } from './views/components/os/os-closed/os-closed.com
     MatDatepickerModule,
     MatNativeDateModule,
     MatSliderModule,
-    MatMenuModule
+    MatMenuModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

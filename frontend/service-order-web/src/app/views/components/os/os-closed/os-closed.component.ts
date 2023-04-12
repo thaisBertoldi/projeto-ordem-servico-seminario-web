@@ -13,6 +13,7 @@ import { ServiceOrderService } from 'src/app/services/serviceorder.service';
   styleUrls: ['./os-closed.component.css']
 })
 export class OsClosedComponent implements AfterViewInit {
+  loading: Boolean;
 
   ordensServico: OS[] = [];
 
@@ -26,7 +27,9 @@ export class OsClosedComponent implements AfterViewInit {
     private router: Router,
     private employeeService: EmployeeService,
     private customerService: CustomerService
-    ) {}
+    ) {
+      this.loading = true;
+    }
 
   ngAfterViewInit() {    
     this.findAll();
@@ -38,7 +41,8 @@ export class OsClosedComponent implements AfterViewInit {
         if(x.status == 'ENCERRADO') {
           this.ordensServico.push(x)
         }
-      })
+      });
+      this.loading = false;
       this.listarTecnico();
       this.listarCliente();
       this.dataSource = new MatTableDataSource<OS>(this.ordensServico);

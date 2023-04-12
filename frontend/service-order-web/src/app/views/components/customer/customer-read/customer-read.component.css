@@ -29,6 +29,13 @@ table {
 
 .div-button-create {
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: 35px;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
 }

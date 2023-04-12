@@ -1,55 +1,64 @@
 <div class="create">
-    <h1>Clientes</h1>
-    <div class="div-button-create">
-        <button mat-raised-button color="primary" class="mat-elevation-z8" (click)="navigateToCreate()">CRIAR CLIENTE</button>
-    </div>
+  <h1>Clientes</h1>
+</div>
+
+<div class="mat-elevation-z8 container">
+  <div class="loading" *ngIf="loading">
+    <mat-spinner></mat-spinner>
   </div>
+  <table mat-table [dataSource]="dataSource" *ngIf="!loading">
 
-  <div class="mat-elevation-z8 container">
-      <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
 
-        <!-- Position Column -->
-        <ng-container matColumnDef="id">
-          <th mat-header-cell *matHeaderCellDef> ID </th>
-          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-        </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>NOME</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
 
-        <!-- Name Column -->
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef> NOME </th>
-          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-        </ng-container>
+    <ng-container matColumnDef="cpf">
+      <th mat-header-cell *matHeaderCellDef>CPF</th>
+      <td mat-cell *matCellDef="let element">{{ element.cpf }}</td>
+    </ng-container>
 
-        <!-- Weight Column -->
-        <ng-container matColumnDef="cpf">
-          <th mat-header-cell *matHeaderCellDef> CPF </th>
-          <td mat-cell *matCellDef="let element"> {{element.cpf}} </td>
-        </ng-container>
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef>TELEFONE</th>
+      <td mat-cell *matCellDef="let element">{{ element.phone }}</td>
+    </ng-container>
 
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="phone">
-          <th mat-header-cell *matHeaderCellDef> TELEFONE </th>
-          <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
-        </ng-container>
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>AÇÕES</th>
+      <td mat-cell *matCellDef="let element">
+        <a routerLink="update/{{ element.id }}">
+          <i id="edit" class="material-icons">edit</i>
+        </a>
+        <a (click)="openModal(element.id, 'customer')">
+          <i id="delete" class="material-icons">delete</i>
+        </a>
+      </td>
+    </ng-container>
 
-        <ng-container matColumnDef="action">
-          <th mat-header-cell *matHeaderCellDef> AÇÕES </th>
-          <td mat-cell *matCellDef="let element">
-            <a routerLink="update/{{ element.id }}">
-              <i id="edit" class="material-icons">edit</i>
-            </a>
-            <a (click)="openModal(element.id, 'customer')">
-              <i id="delete" class="material-icons">delete</i>
-            </a>
-          </td>
-        </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 20, 50, 100]"
+    showFirstLastButtons
+    aria-label="Select page of periodic elements"
+  >
+  </mat-paginator>
+</div>
 
-      <mat-paginator [pageSizeOptions]="[5, 10, 20, 50, 100]"
-                     showFirstLastButtons
-                     aria-label="Select page of periodic elements">
-      </mat-paginator>
-    </div>
+<div class="div-button-create">
+  <button
+    mat-raised-button
+    color="primary"
+    class="mat-elevation-z8"
+    (click)="navigateToCreate()"
+  >
+    CRIAR CLIENTE
+  </button>
+</div>

@@ -13,6 +13,7 @@ import { ModalService } from 'src/app/services/modal.service';
 })
 export class EmployeeReadComponent implements AfterViewInit {
   employees: Person[] = [];
+  loading: Boolean;
 
   displayedColumns: string[] = ['id', 'name', 'cpf', 'phone', 'action'];
   dataSource = new MatTableDataSource<Person>(this.employees);
@@ -23,7 +24,9 @@ export class EmployeeReadComponent implements AfterViewInit {
     private service : EmployeeService,
     private router: Router,
     private modal: ModalService
-  ) {}
+  ) {
+    this.loading = true;
+  }
 
   ngAfterViewInit() {
     this.findAll();
@@ -32,6 +35,7 @@ export class EmployeeReadComponent implements AfterViewInit {
   findAll():void {
     this.service.findAll().subscribe(
       (res) => {
+        this.loading = false;
         this.employees = res;
         this.dataSource = new MatTableDataSource<Person>(this.employees);
         this.dataSource.paginator = this.paginator;

@@ -33,3 +33,10 @@ h1 {
   text-align: center;
   font-size: 2rem;
 }
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}

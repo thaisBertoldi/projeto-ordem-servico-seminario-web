@@ -13,6 +13,8 @@ import { ModalService } from 'src/app/services/modal.service';
 })
 export class CustomerReadComponent implements AfterViewInit {
 
+  loading: Boolean;
+
   clientes: Person[] = [];
 
   displayedColumns: string[] = ['id', 'name', 'cpf', 'phone', 'action'];
@@ -24,7 +26,9 @@ export class CustomerReadComponent implements AfterViewInit {
     private service : CustomerService,
     private router: Router,
     private modal: ModalService
-  ) {}
+  ) {
+    this.loading = true;
+  }
 
   ngAfterViewInit() {    
     this.findAll();
@@ -32,6 +36,7 @@ export class CustomerReadComponent implements AfterViewInit {
 
   findAll():void {
     this.service.findAll().subscribe((resposta) => {
+      this.loading = false;
       this.clientes = resposta;
       this.dataSource = new MatTableDataSource<Person>(this.clientes);
       this.dataSource.paginator = this.paginator;
