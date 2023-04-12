@@ -1,3 +1,4 @@
-<app-header></app-header>
-<app-footer></app-footer>
-<app-nav></app-nav>
+<app-header *ngIf="!getLogin()"></app-header>
+<app-footer *ngIf="!getLogin()"></app-footer>
+<app-nav *ngIf="!getLogin()"></app-nav>
+<app-login *ngIf="getLogin()"></app-login>

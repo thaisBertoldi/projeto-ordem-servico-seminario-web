@@ -17,7 +17,7 @@ export class OsClosedComponent implements AfterViewInit {
 
   ordensServico: OS[] = [];
 
-  displayedColumns: string[] = ['employee', 'customer', 'openingDate', 'closingDate', 'priority', 'status', 'action'];
+  displayedColumns: string[] = ['employee', 'customer', 'openingDate', 'closingDate', 'priority', 'status'];
   dataSource = new MatTableDataSource<OS>(this.ordensServico);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

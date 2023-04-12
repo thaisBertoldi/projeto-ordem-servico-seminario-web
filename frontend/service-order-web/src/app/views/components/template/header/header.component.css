@@ -1,4 +1,24 @@
-.header-spacer {
-  display: flex;
-  align-items: center;
+.filler {
+  flex: 1 1 auto;
+}
+.gap {
+  margin-right: 10px;
+}
+
+.navbar {
+  background-color: #151515;
+  color: white;
+}
+
+.button-logout {
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  background-color: #ff512f;
+  font-size: 15px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

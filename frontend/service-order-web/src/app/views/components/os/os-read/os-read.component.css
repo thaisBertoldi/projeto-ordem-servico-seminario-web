@@ -2,6 +2,7 @@
     width: 90%;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 30px;
 }
 
 .create h1 {
@@ -56,4 +57,22 @@ td.alta {
     align-items: center;
     justify-content: center;
     padding: 15px;
+}
+
+.button-create {
+    background-color: #1c64ff;
+    color: white;
+}
+
+.button-encerrar {
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: #ff512f;
+    font-size: 15px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }

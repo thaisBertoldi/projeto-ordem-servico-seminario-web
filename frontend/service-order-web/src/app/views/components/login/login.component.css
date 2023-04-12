@@ -1,0 +1,90 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  background-color: #151515;
+  height: 100vh;
+}
+
+.form-login {
+  border-radius: 10px;
+  width: 500px;
+  height: 70vh;
+  background-color: #151515;
+  border: 5px solid;
+  border-image: 
+    linear-gradient(
+        #ff512f,
+        #dd2476,
+        #1c64ff
+    ) 1;
+    animation: rotate
+    2.5s ease-in infinite
+}
+
+@keyframes rotate {
+    50% {
+        border-image: 
+        linear-gradient(
+            360deg,
+            #ff512f,
+            #dd2476,
+            #1c64ff
+        ) 1;
+    }
+}
+
+.title-login {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  margin: 25px;
+}
+
+.title-login i {
+    font-size: 70px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  color: white;
+  gap: 15px;
+}
+
+.form-control {
+  margin-bottom: 15px;
+  border: none;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom: 2px solid white;
+  background: none;
+  color: white;
+}
+
+.form-control:focus {
+    outline: none;
+}
+
+.div-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-login {
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: #1c64ff;
+    margin-top: 30px;
+}

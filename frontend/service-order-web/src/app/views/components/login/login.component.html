@@ -1,0 +1,37 @@
+<div class="container" *ngIf="showView">
+  <div class="form-login">
+    <div class="title-login">
+        <i class="material-icons">person_pin</i>
+        <h1>Login</h1>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="login()">
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          formControlName="email"
+          requiredminlength="5"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input
+          type="password"
+          id="senha"
+          class="form-control"
+          formControlName="senha"
+          requiredminlength="8"
+        />
+      </div>
+
+      <div class="div-button">
+        <button class="button-login" type="submit" [disabled]="!form.valid">
+            Entrar
+          </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -22,7 +22,7 @@ export class ServiceOrderService {
     return this.http.get<OS[]>(url);
   }
 
-  findById(id : any):Observable<OS> {
+  findById(id: Number):Observable<OS> {
     const url = `${this.baseUrl}/ordemservicos/${id}`
     return this.http.get<OS>(url);
   }
@@ -33,7 +33,7 @@ export class ServiceOrderService {
   }
 
   update(os: OS):Observable<OS> {
-    const url = `${this.baseUrl}/ordemservicos/${os.id}`;
+    const url = `${this.baseUrl}/ordemservicos`;
     return this.http.put<OS>(url, os);
   }
 

@@ -55,6 +55,6 @@ export class OsCreateComponent implements OnInit {
   }
 
   cancel(): void {
-    this.router.navigate(["/service-order"]);
+    this.router.navigate(["service-order"]);
   }
 }

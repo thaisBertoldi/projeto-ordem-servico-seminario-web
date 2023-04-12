@@ -39,3 +39,8 @@ table {
     justify-content: center;
     padding: 15px;
 }
+
+.button-create {
+    background-color: #1c64ff;
+    color: white;
+}

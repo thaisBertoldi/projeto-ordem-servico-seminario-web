@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { OS } from 'src/app/models/Interfaces';
 import { CustomerService } from 'src/app/services/customer.service';
 import { EmployeeService } from 'src/app/services/employee.service';
+import { ModalService } from 'src/app/services/modal.service';
 import { ServiceOrderService } from 'src/app/services/serviceorder.service';
 
 @Component({
@@ -14,10 +15,11 @@ import { ServiceOrderService } from 'src/app/services/serviceorder.service';
 })
 export class OsReadComponent implements AfterViewInit {
   loading: Boolean;
+  newOrder: OS;
   
   ordensServico: OS[] = [];
 
-  displayedColumns: string[] = ['employee', 'customer', 'openingDate', 'closingDate', 'priority', 'status', 'action'];
+  displayedColumns: string[] = ['employee', 'customer', 'openingDate', 'priority', 'status', 'action', 'changeStatus'];
   dataSource = new MatTableDataSource<OS>(this.ordensServico);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -26,7 +28,8 @@ export class OsReadComponent implements AfterViewInit {
     private service : ServiceOrderService,
     private router:Router,
     private employeeService: EmployeeService,
-    private customerService: CustomerService
+    private customerService: CustomerService,
+    private modal: ModalService
   ) {
     this.loading = true;
   }
@@ -79,4 +82,9 @@ export class OsReadComponent implements AfterViewInit {
       return 'alta'
     }
   }
+
+  openModal(id: Number): void {
+    this.modal.encerrar(id);
+  }
+
 }

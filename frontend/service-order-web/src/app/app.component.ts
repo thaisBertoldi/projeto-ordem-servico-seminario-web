@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'service-order-web';
+
+  getLogin(): boolean {
+    return sessionStorage.getItem('login') ? false : true;
+  }
 }

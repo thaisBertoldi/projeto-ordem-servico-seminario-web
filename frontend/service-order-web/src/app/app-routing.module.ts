@@ -12,44 +12,61 @@ import { OsCreateComponent } from './views/components/os/os-create/os-create.com
 import { OsUpdateComponent } from './views/components/os/os-update/os-update.component';
 import { OsViewsComponent } from './views/components/os/os-views/os-views.component';
 import { OsClosedComponent } from './views/components/os/os-closed/os-closed.component';
+import { LoginComponent } from './views/components/login/login.component';
+import { AuthGuard } from './services/auth-guard.service';
 
 const routes: Routes = [
   {
+    path: 'login',
+    component: LoginComponent
+  },{
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard]
   },{
     path: 'employee',
-    component: EmployeeReadComponent
+    component: EmployeeReadComponent,
+    canActivate: [AuthGuard]
   },{
     path: 'employee/create',
-    component: EmployeeCreateComponent
+    component: EmployeeCreateComponent,
+    canActivate: [AuthGuard]
   },{
     path: 'employee/update/:id',
-    component: EmployeeUpdateComponent
+    component: EmployeeUpdateComponent,
+    canActivate: [AuthGuard]
   },{
     path: 'customer',
-    component: CustomerReadComponent
+    component: CustomerReadComponent,
+    canActivate: [AuthGuard]
   },{
     path: 'customer/create',
-    component: CustomerCreateComponent
+    component: CustomerCreateComponent,
+    canActivate: [AuthGuard]
   },{
     path: 'customer/update/:id',
-    component: CustomerUpdateComponent
+    component: CustomerUpdateComponent,
+    canActivate: [AuthGuard]
   },{
     path: 'service-order',
-    component: OsReadComponent
+    component: OsReadComponent,
+    canActivate: [AuthGuard]
   },{
     path: 'service-order/create',
-    component: OsCreateComponent
+    component: OsCreateComponent,
+    canActivate: [AuthGuard]
   },{
     path: 'service-order/update/:id',
-    component: OsUpdateComponent
+    component: OsUpdateComponent,
+    canActivate: [AuthGuard]
   },{
     path: 'service-order/view/:id',
-    component: OsViewsComponent
+    component: OsViewsComponent,
+    canActivate: [AuthGuard]
   },{
     path: 'service-order/closed',
-    component: OsClosedComponent
+    component: OsClosedComponent,
+    canActivate: [AuthGuard]
   },
 ];
 

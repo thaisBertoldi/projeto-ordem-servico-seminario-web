@@ -35,7 +35,9 @@ export class EmployeeReadComponent implements AfterViewInit {
   findAll():void {
     this.service.findAll().subscribe(
       (res) => {
-        this.loading = false;
+        setTimeout(() => {
+          this.loading = false;
+        }, 3000);
         this.employees = res;
         this.dataSource = new MatTableDataSource<Person>(this.employees);
         this.dataSource.paginator = this.paginator;

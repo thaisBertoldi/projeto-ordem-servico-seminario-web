@@ -2,20 +2,24 @@
   <mat-drawer #drawer class="sidenav" mode="side">
     <mat-nav-list class="nav-list">
       <a mat-list-item routerLink="/">
-        <i class="material-icons">home</i>Home
+        <i class="material-icons">home</i>
+        <span>Home</span>
       </a>
       <a mat-list-item routerLink="/employee">
-        <i class="material-icons">work</i>Técnico
+        <i class="material-icons">work</i>
+        <span>Técnico</span>
       </a>
       <a mat-list-item routerLink="/customer">
-        <i class="material-icons">person_search</i>Cliente
+        <i class="material-icons">person_search</i>
+        <span>Cliente</span>
       </a>
       <a mat-list-item [matMenuTriggerFor]="menu">
         <mat-menu #menu="matMenu">
           <a routerLink="service-order" mat-menu-item>Abertas ou Em Anadamento</a>
           <a routerLink="service-order/closed" mat-menu-item>Encerradas</a>
         </mat-menu>
-        <i class="material-icons">person_pin</i>Ordens de Serviço
+        <i class="material-icons">person_pin</i>
+        <span>Ordens de Serviço</span>
       </a>
     </mat-nav-list>
   </mat-drawer>

@@ -39,7 +39,10 @@ import { OsUpdateComponent } from './views/components/os/os-update/os-update.com
 import { OsViewsComponent } from './views/components/os/os-views/os-views.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { OsClosedComponent } from './views/components/os/os-closed/os-closed.component';
+import { LoginComponent } from './views/components/login/login.component';
+import { AuthGuard } from './services/auth-guard.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ModalEncerrarComponent } from './views/components/modal-encerrar/modal-encerrar.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +63,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     OsUpdateComponent,
     OsViewsComponent,
     OsClosedComponent,
+    LoginComponent,
+    ModalEncerrarComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,7 +92,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatMenuModule,
     MatProgressSpinnerModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,8 +4,18 @@
 
 i {
     margin-right: 1rem;
+    color: white;
+}
+
+span {
+    color: white;
 }
 
 button {
     margin: 1rem auto 0 1rem;
+}
+
+.nav-list {
+    background-color: #151515;
+    height: 82vh;
 }

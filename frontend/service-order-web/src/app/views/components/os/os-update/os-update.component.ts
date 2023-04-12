@@ -48,12 +48,12 @@ export class OsUpdateComponent implements OnInit {
   update(): void {
     this.osService.update(this.os).subscribe(resposta => {
       this.osService.message("Ordem de serviço atualizada com  sucesso !");
-      this.router.navigate(['os']);
+      this.router.navigate(['service-order']);
     })
   }
 
   cancel(): void {
-    this.router.navigate(['os']);
+    this.router.navigate(['service-order']);
   }
 
   listarTecnicos(): void {
