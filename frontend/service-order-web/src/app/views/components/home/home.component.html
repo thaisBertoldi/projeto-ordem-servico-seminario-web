@@ -16,36 +16,26 @@
 </div>
 
 <div class="div-statistics">
-    <mat-card class="mat-elevation-z8">
-        <mat-card-header>
-            <mat-card-title>Odens de Serviço em Aberto</mat-card-title>
-        </mat-card-header>
-        <hr>
-        <mat-card class="demo-inline-calendar-card">
-            <mat-calendar></mat-calendar>
-        </mat-card>
-    </mat-card>
-    <mat-card class="card-topics">
-        <mat-card-content>
-          <section>
-            <mat-form-field class="margin-topics" appearance="fill">
-              <mat-label>Value</mat-label>
-              <input matInput type="number" [(ngModel)]="value">
-            </mat-form-field>
-            <mat-form-field class="margin-topics" appearance="fill">
-              <mat-label>Min value</mat-label>
-              <input matInput type="number" [(ngModel)]="min">
-            </mat-form-field>
-            <mat-form-field class="margin-topics" appearance="fill">
-              <mat-label>Max value</mat-label>
-              <input matInput type="number" [(ngModel)]="max">
-            </mat-form-field>
-            <mat-form-field class="margin-topics" appearance="fill">
-              <mat-label>Step size</mat-label>
-              <input matInput type="number" [(ngModel)]="step">
-            </mat-form-field>
-          </section>
-        </mat-card-content>
-      </mat-card>
+  <mat-card class="card-topics">
+    <mat-card-content>
+      <section>
+        <mat-form-field class="margin-topics" appearance="fill">
+          <mat-label>Total Clientes</mat-label>
+          <input matInput type="number" [(ngModel)]="customers" />
+        </mat-form-field>
+        <mat-form-field class="margin-topics" appearance="fill">
+          <mat-label>Total Técnicos</mat-label>
+          <input matInput type="number" [(ngModel)]="employees" />
+        </mat-form-field>
+        <mat-form-field class="margin-topics" appearance="fill">
+          <mat-label>Ordens Abertas</mat-label>
+          <input matInput type="number" [(ngModel)]="openOS" />
+        </mat-form-field>
+        <mat-form-field class="margin-topics" appearance="fill">
+          <mat-label>Ordens Encerradas</mat-label>
+          <input matInput type="number" [(ngModel)]="closedOS" />
+        </mat-form-field>
+      </section>
+    </mat-card-content>
+  </mat-card>
 </div>
-
