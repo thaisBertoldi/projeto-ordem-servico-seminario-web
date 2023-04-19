@@ -16,6 +16,7 @@ export class EmployeeCreateComponent {
     name: "",
     cpf: "",
     phone: "",
+    type: "",
   };
 
   

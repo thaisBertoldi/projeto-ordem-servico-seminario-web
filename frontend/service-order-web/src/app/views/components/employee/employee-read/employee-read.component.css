@@ -27,20 +27,9 @@ table {
     width: 20%;
 }
 
-.div-button-create {
-    display: flex;
-    justify-content: center;
-    margin-top: 35px;
-}
-
 .loading {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 15px;
-}
-
-.button-create {
-    background-color: #1c64ff;
-    color: white;
 }

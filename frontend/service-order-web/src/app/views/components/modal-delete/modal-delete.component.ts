@@ -1,6 +1,5 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Router } from '@angular/router';
 import { CustomerService } from 'src/app/services/customer.service';
 import { EmployeeService } from 'src/app/services/employee.service';
 
@@ -25,9 +24,9 @@ export class ModalDeleteComponent {
   ) {}
 
   delete(id: Number): void {
-    const service = this.data.person === 'employee' ? this.serviceEmployee : this.serviceCustomer
+    const service = this.data.person === 'employee' ? this.serviceEmployee : this.serviceCustomer;
     service.delete(id).subscribe(resposta => {
-      service.message('Tecnico deletado com sucesso!')
+      service.message(`Usuário deletado com sucesso!`)
       setTimeout(() => {
         location.reload();
       }, 2000);

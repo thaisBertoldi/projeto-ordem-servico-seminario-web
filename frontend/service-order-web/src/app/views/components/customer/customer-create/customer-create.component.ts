@@ -16,6 +16,7 @@ export class CustomerCreateComponent {
     name: "",
     cpf: "",
     phone: "",
+    type: ""
   };
 
   name = new FormControl('', [Validators.minLength(5)])

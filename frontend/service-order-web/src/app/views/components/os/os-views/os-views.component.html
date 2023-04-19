@@ -1,8 +1,37 @@
 <div class="container">
-    <h1>Observações da Ordem de Serviço</h1>
-    <mat-card class="mat-elevation-z8">
-        <p id="abertura" >Data de abertura: {{ os.openingDate }}</p>
+  <h1>Observações da Ordem de Serviço</h1>
+  <mat-card class="mat-elevation-z8">
+    <mat-card-header>
+      <mat-card-title>Ordem de serviço nº {{ os.id }}</mat-card-title>
+      <mat-card-subtitle>{{ os.status }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="div-item">
+        <h2 class="title-item">Técnico responsável</h2>
+        <p>{{ employee }}</p>
+      </div>
+      <div class="div-item">
+        <h2 class="title-item">Cliente solicitante</h2>
+        <p>{{ customer }}</p>
+      </div>
+      <div class="div-item">
+        <h2 class="title-item">Data de abertura</h2>
+        <p>{{ os.openingDate }}</p>
+      </div>
+      <div class="div-item">
+        <h2 class="title-item">Descrição</h2>
         <p>{{ os.observations }}</p>
-    </mat-card>
-    <button (click)="return()" class="mat-elevation-z8" mat-raised-button color="primary">VOLTAR</button>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        (click)="return()"
+        class="mat-elevation-z8"
+        mat-raised-button
+        color="primary"
+      >
+        VOLTAR
+      </button>
+    </mat-card-actions>
+  </mat-card>
 </div>

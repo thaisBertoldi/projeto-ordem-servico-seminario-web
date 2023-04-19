@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
+  showNavAdmin: Boolean;
 
   constructor() { }
 
   ngOnInit(): void {
+    const type = sessionStorage.getItem('type');
+    if(type === 'admin') {
+      this.showNavAdmin = true;
+    } else {
+      this.showNavAdmin = false;
+    }
   }
   
 }

@@ -76,3 +76,32 @@ td.alta {
     font-size: 15px;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.button-atualizar {
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-right: 15px;
+    background-color: #1c64ff;
+    font-size: 15px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@media  (max-width: 1000px) {
+    .cdk-column-openingDate, .cdk-column-priority, .cdk-column-status {
+        display: none;
+    }
+}
+
+.button-ghost {
+    width: 100px;
+    height: 30px;
+    outline: none;
+    border: none;
+    margin-right: 15px;
+    background-color: white;
+}

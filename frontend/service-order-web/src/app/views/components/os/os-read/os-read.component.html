@@ -27,8 +27,7 @@
       <td
         mat-cell
         *matCellDef="let element"
-        class="{{ prioridade(element.priority) }}"
-      >
+        class="{{ prioridade(element.priority) }}">
         {{ element.priority }}
       </td>
     </ng-container>
@@ -51,13 +50,23 @@
     </ng-container>
 
     <ng-container matColumnDef="changeStatus">
-        <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let element">
-            <button class="button-encerrar" (click)="openModal(element.id)">
-                Encerrar
-            </button>
-        </td>
-      </ng-container>
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <button
+          *ngIf="isEmployee && (element.status === 'ABERTO')"
+          class="button-atualizar"
+          (click)="openModalUpdate(element.id)">
+          Aceitar
+        </button>
+        <button *ngIf="isEmployee && !(element.status === 'ABERTO')" class="button-ghost"></button>
+        <button
+          *ngIf="isEmployee"
+          class="button-encerrar"
+          (click)="openModal(element.id)">
+          Encerrar
+        </button>
+      </td>
+    </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
@@ -66,17 +75,15 @@
   <mat-paginator
     [pageSizeOptions]="[5, 10, 20, 50, 100]"
     showFirstLastButtons
-    aria-label="Select page of periodic elements"
-  >
+    aria-label="Select page of periodic elements">
   </mat-paginator>
 </div>
 
-<div class="div-button-create">
+<div class="div-button-create" *ngIf="isCustomer">
   <button
     mat-raised-button
     class="mat-elevation-z8 button-create"
-    (click)="navigateToCreate()"
-  >
+    (click)="navigateToCreate()">
     CRIAR ORDEM DE SERVIÇO
   </button>
 </div>

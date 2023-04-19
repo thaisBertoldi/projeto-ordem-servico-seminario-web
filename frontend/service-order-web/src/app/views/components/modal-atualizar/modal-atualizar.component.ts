@@ -1,17 +1,15 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { DialogData } from '../modal-delete/modal-delete.component';
-import { ServiceOrderService } from 'src/app/services/serviceorder.service';
 import { OS } from 'src/app/models/Interfaces';
-import { formatDate } from '@angular/common';
-import { format } from 'path';
+import { ServiceOrderService } from 'src/app/services/serviceorder.service';
+import { DialogData } from '../modal-delete/modal-delete.component';
 
 @Component({
-  selector: 'app-modal-encerrar',
-  templateUrl: './modal-encerrar.component.html',
-  styleUrls: ['./modal-encerrar.component.css']
+  selector: 'app-modal-atualizar',
+  templateUrl: './modal-atualizar.component.html',
+  styleUrls: ['./modal-atualizar.component.css']
 })
-export class ModalEncerrarComponent {
+export class ModalAtualizarComponent {
 
   answer: Boolean = false;
   os: OS = {
@@ -23,16 +21,16 @@ export class ModalEncerrarComponent {
   }
 
   constructor(
-    public dialogRef: MatDialogRef<ModalEncerrarComponent>,
+    public dialogRef: MatDialogRef<ModalAtualizarComponent>,
     private osService: ServiceOrderService,
     @Inject(MAT_DIALOG_DATA) public data: DialogData
   ) {
     this.findById();
   }
 
-  encerrar(): void {
+  updateStatus(): void {
     this.osService.update(this.os).subscribe(resposta => {
-      this.osService.message("Ordem de serviço encerrada com  sucesso !");
+      this.osService.message("Ordem de serviço atualizada com  sucesso !");
       setTimeout(() => {
         location.reload();
       }, 2000);
@@ -47,7 +45,7 @@ export class ModalEncerrarComponent {
   }
 
   converteDados(): void {
-    this.os.status = 2;
+    this.os.status = 1;
     if(this.os.priority == 'BAIXA') {
       this.os.priority = 0;
     } else if(this.os.priority == 'MEDIA') {
@@ -62,9 +60,10 @@ export class ModalEncerrarComponent {
   }
 
   onClick(): void {
-    this.encerrar();
+    this.updateStatus();
     this.answer = true;
     this.dialogRef.close();
   }
 
 }
+

@@ -18,6 +18,7 @@ export class EmployeeUpdateComponent implements OnInit {
     name: "",
     cpf: "",
     phone: "",
+    type: ""
   };
 
   name = new FormControl('', [Validators.minLength(5)])
@@ -37,7 +38,7 @@ export class EmployeeUpdateComponent implements OnInit {
 
   update():void {
     this.service.update(this.tecnico).subscribe(resposta => {
-      this.router.navigate(["/employee"]);
+      this.router.navigate(["/admTools"]);
       this.service.message('Técnico atualizado com sucesso !');
     },(err) => {
       if (err.error.message.match("já cadastrado")) {
@@ -55,7 +56,7 @@ export class EmployeeUpdateComponent implements OnInit {
   }
 
   cancel(): void {
-    this.router.navigate(["/employee"]);
+    this.router.navigate(["/admTools"]);
   }
 
   errorValidName() {

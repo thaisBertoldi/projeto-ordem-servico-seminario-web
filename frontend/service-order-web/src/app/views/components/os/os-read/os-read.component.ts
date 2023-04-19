@@ -16,6 +16,9 @@ import { ServiceOrderService } from 'src/app/services/serviceorder.service';
 export class OsReadComponent implements AfterViewInit {
   loading: Boolean;
   newOrder: OS;
+  isCustomer: Boolean;
+  isEmployee: Boolean;
+  isOpen: Boolean;
   
   ordensServico: OS[] = [];
 
@@ -36,13 +39,25 @@ export class OsReadComponent implements AfterViewInit {
 
   ngAfterViewInit() {    
     this.findAll();
+    const type = sessionStorage.getItem('type')
+    if (type === 'customer') {
+      this.isCustomer = true;
+    } else if (type === 'employee') {
+      this.isEmployee = true;
+    }
   }
 
   findAll():void {
     this.service.findAll().subscribe((resposta) => {
       resposta.forEach(order => {
-        if(order.status != 'ENCERRADO') {
+        if(order.status !== 'ENCERRADO') {
           this.ordensServico.push(order);
+        }
+
+        if(order.status === 'ABERTO'){
+          this.isOpen = true;
+        } else {
+          this.isOpen = false;
         }
       });
       this.loading = false;
@@ -85,6 +100,10 @@ export class OsReadComponent implements AfterViewInit {
 
   openModal(id: Number): void {
     this.modal.encerrar(id);
+  }
+
+  openModalUpdate(id: Number): void {
+    this.modal.atualizar(id)
   }
 
 }

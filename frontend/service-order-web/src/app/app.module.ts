@@ -43,6 +43,8 @@ import { LoginComponent } from './views/components/login/login.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ModalEncerrarComponent } from './views/components/modal-encerrar/modal-encerrar.component';
+import { AdmPageComponent } from './views/components/adm-page/adm-page.component';
+import { ModalAtualizarComponent } from './views/components/modal-atualizar/modal-atualizar.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +67,8 @@ import { ModalEncerrarComponent } from './views/components/modal-encerrar/modal-
     OsClosedComponent,
     LoginComponent,
     ModalEncerrarComponent,
+    AdmPageComponent,
+    ModalAtualizarComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,36 +1,112 @@
 <div class="container" *ngIf="showView">
-  <div class="form-login">
+  
+  <!-- Login -->
+  <div class="form-login" *ngIf="!showRegister">
     <div class="title-login">
         <i class="material-icons">person_pin</i>
         <h1>Login</h1>
     </div>
     <form [formGroup]="form" (ngSubmit)="login()">
       <div class="form-group">
-        <label for="email">E-mail</label>
+        <label for="cpf">CPF</label>
         <input
-          type="email"
-          id="email"
+          type="cpf"
+          id="cpf"
           class="form-control"
-          formControlName="email"
+          formControlName="cpf"
           requiredminlength="5"
         />
       </div>
 
       <div class="form-group">
-        <label for="senha">Senha</label>
+        <label for="password">Password</label>
         <input
           type="password"
-          id="senha"
+          id="password"
           class="form-control"
-          formControlName="senha"
+          formControlName="password"
           requiredminlength="8"
         />
       </div>
 
       <div class="div-button">
-        <button class="button-login" type="submit" [disabled]="!form.valid">
+        <button class="button button-login" type="submit" [disabled]="!form.valid">
             Entrar
           </button>
+
+          <button class="button button-register" type="button" (click)="toggleRegister()">
+            Registrar-se
+          </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Registro -->
+  <div class="form-login" *ngIf="showRegister">
+    <form [formGroup]="form" (ngSubmit)="login()">
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input
+          [(ngModel)]="person.name"
+          type="name"
+          id="name"
+          class="form-control"
+          formControlName="name"
+          requiredminlength="5"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input
+          [(ngModel)]="person.cpf"
+          type="cpf"
+          id="cpf"
+          class="form-control"
+          formControlName="cpf"
+          requiredminlength="5"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Telefone</label>
+        <input
+          [(ngModel)]="person.phone"
+          type="phone"
+          id="phone"
+          class="form-control"
+          formControlName="phone"
+          requiredminlength="5"
+        />
+      </div>
+
+      <mat-form-field appearance="fill" class="field-type form-group">
+        <mat-label class="label-type {{ hasType }}">Selecione uma categoria</mat-label>
+        <mat-select [(value)]="person.type" (valueChange)="selectCategory($event)">
+          <mat-option value="employee">Técnico</mat-option>
+          <mat-option value="customer">Cliente</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="form-group">
+        <label for="password">password</label>
+        <input
+          [(ngModel)]="person.password"
+          type="password"
+          id="password"
+          class="form-control"
+          formControlName="password"
+          requiredminlength="8"
+        />
+      </div>
+
+      <div class="div-button">
+        <button class="button button-login" type="button" (click)="create()">
+            Registrar
+        </button>
+        <button class="button button-register" type="button" (click)="cancel()">
+          Voltar
+      </button>
       </div>
     </form>
   </div>

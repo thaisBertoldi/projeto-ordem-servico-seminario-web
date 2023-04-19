@@ -3,6 +3,8 @@ export interface Person {
   name: String;
   cpf: String;
   phone: String;
+  type: String;
+  password?: String;
 }
 
 export interface OS {

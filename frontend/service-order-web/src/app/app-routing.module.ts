@@ -14,6 +14,7 @@ import { OsViewsComponent } from './views/components/os/os-views/os-views.compon
 import { OsClosedComponent } from './views/components/os/os-closed/os-closed.component';
 import { LoginComponent } from './views/components/login/login.component';
 import { AuthGuard } from './services/auth-guard.service';
+import { AdmPageComponent } from './views/components/adm-page/adm-page.component';
 
 const routes: Routes = [
   {
@@ -67,7 +68,11 @@ const routes: Routes = [
     path: 'service-order/closed',
     component: OsClosedComponent,
     canActivate: [AuthGuard]
-  },
+  },{
+    path: 'admTools',
+    component: AdmPageComponent,
+    canActivate: [AuthGuard]
+  }
 ];
 
 @NgModule({

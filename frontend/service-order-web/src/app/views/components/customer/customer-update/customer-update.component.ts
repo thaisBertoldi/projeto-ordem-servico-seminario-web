@@ -17,6 +17,7 @@ export class CustomerUpdateComponent implements OnInit {
     name: '',
     cpf: '',
     phone: '',
+    type: ''
   };
 
   name = new FormControl('', [Validators.minLength(5)]);
@@ -35,7 +36,7 @@ export class CustomerUpdateComponent implements OnInit {
   }
 
   cancel(): void {
-    this.router.navigate(['/customer']);
+    this.router.navigate(['/admTools']);
   }
 
   findById(): void {
@@ -47,7 +48,7 @@ export class CustomerUpdateComponent implements OnInit {
   update(): void {
     this.service.update(this.cliente).subscribe(
       (resposta) => {
-        this.router.navigate(['/customer']);
+        this.router.navigate(['/admTools']);
         this.service.message('Cliente atualizado com sucesso!');
       },
       (err) => {
