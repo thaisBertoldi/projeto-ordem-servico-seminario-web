@@ -5,8 +5,7 @@ import java.io.Serializable;
 import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.validator.constraints.br.CPF;
-
-import service_order.service_order.domain.Employee;
+import service_order.service_order.domain.Person;
 
 public class EmployeeDTO implements Serializable {
     
@@ -24,17 +23,18 @@ public class EmployeeDTO implements Serializable {
     @NotEmpty( message = "O campo TELEFONE é requerido" )
 	private String phone;
 
+    private String type;
+    private String password;
+
     public EmployeeDTO() {}
 
-    public EmployeeDTO(Employee obj) {
-		this.id = obj.getId();
-		this.name = obj.getName();
-		this.cpf = obj.getCpf();
-		this.phone = obj.getPhone();
-    }
-
-    public static long getSerialversionuid() {
-        return serialVersionUID;
+    public EmployeeDTO(Person person) {
+		this.id = person.getId();
+		this.name = person.getName();
+		this.cpf = person.getCpf();
+		this.phone = person.getPhone();
+        this.type = person.getType();
+        this.password = person.getPassword();
     }
 
     public Integer getId() {
@@ -67,6 +67,22 @@ public class EmployeeDTO implements Serializable {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 }

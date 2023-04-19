@@ -21,8 +21,8 @@ public class Employee extends Person implements Serializable {
     public Employee() {
     }
 
-    public Employee(Integer id, String name, String cpf, String phone) {
-        super(id, name, cpf, phone);
+    public Employee(Integer id, String name, String cpf, String phone , String type, String password) {
+        super(id, name, cpf, phone, type, password);
     }
 
     public List<ServiceOrder> getServiceOrders() {

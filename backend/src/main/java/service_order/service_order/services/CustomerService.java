@@ -40,7 +40,7 @@ public class CustomerService {
 		if(findByCPF(objDTO) != null) {
 			throw new DataIntegratyViolationException("CPF já cadastrado na base de dados!");
 		}
-		Customer newObj = new Customer(null, objDTO.getName(), objDTO.getCpf(), objDTO.getPhone());
+		Customer newObj = new Customer(null, objDTO.getName(), objDTO.getCpf(), objDTO.getPhone(), objDTO.getType(), objDTO.getPassword());
 		return customerRepository.save(newObj);
 	}
 

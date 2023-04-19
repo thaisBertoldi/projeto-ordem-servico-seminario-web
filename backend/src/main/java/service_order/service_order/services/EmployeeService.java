@@ -42,7 +42,7 @@ public class EmployeeService {
         if(findByCPF(objDTO) != null) {
 			throw new DataIntegratyViolationException("CPF já cadastrado na base de dados!");
 		}
-		Employee newObj = new Employee(null, objDTO.getName(), objDTO.getCpf(), objDTO.getPhone());
+		Employee newObj = new Employee(null, objDTO.getName(), objDTO.getCpf(), objDTO.getPhone(), objDTO.getType(), objDTO.getPassword());
 		return employeeRepository.save(newObj);
 	}
 

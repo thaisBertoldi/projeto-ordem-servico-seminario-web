@@ -23,6 +23,10 @@ public class CustomerDTO implements Serializable {
 	@NotEmpty( message = "O campo Telefone é requerido" )
 	private String phone;
 
+	private String type;
+
+	private String password;
+
 	public CustomerDTO() {
 		super();
 	}
@@ -33,6 +37,8 @@ public class CustomerDTO implements Serializable {
 		this.name = obj.getName();
 		this.cpf = obj.getCpf();
 		this.phone = obj.getPhone();
+		this.type = obj.getType();
+        this.password = obj.getPassword();
 	}
 
 	public Integer getId() {
@@ -65,6 +71,22 @@ public class CustomerDTO implements Serializable {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }

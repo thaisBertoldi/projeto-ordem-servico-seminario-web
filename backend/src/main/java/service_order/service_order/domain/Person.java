@@ -23,14 +23,19 @@ public abstract class Person implements Serializable {
 
     private String name;
     private String phone;
+    private String type;
+    
+    public String password;
 
     public Person() {};
 
-    public Person(Integer id, String name, String cpf, String phone) {
+    public Person(Integer id, String name, String cpf, String phone, String type, String password) {
         this.id = id;
         this.name = name;
         this.cpf = cpf;
         this.phone = phone;
+        this.type = type;
+        this.password = password;
     }
 
     public Integer getId() {
@@ -65,6 +70,22 @@ public abstract class Person implements Serializable {
         this.phone = phone;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -94,6 +115,10 @@ public abstract class Person implements Serializable {
         } else if (!cpf.equals(other.cpf))
             return false;
         return true;
+    }
+
+    public Person orElseThrow(Object object) {
+        return null;
     }
     
 }
