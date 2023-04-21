@@ -34,3 +34,24 @@ table {
     padding: 15px;
 }
 
+@media (max-width: 500px) {
+
+    .container {
+        width: 70%;
+    }
+
+    .mat-row {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+    tr.mat-row  {
+        height: 150px;
+        display: flex;
+        padding-left: 30px;
+    }
+    tr.mat-header-row {
+        display: none;
+    }
+    
+}

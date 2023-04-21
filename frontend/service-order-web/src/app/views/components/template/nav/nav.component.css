@@ -19,3 +19,20 @@ button {
     background-color: #151515;
     height: 91vh;
 }
+
+.icon-back {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    .mat-drawer {
+        width: 100%;
+    }
+    .icon-back {
+        display: block;
+        color: white;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}

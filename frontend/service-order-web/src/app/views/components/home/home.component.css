@@ -45,3 +45,29 @@ mat-icon {
 .margin-topics {
   margin: 8px;
 }
+
+@media (max-width: 500px) {
+  .div-statistics {
+    width: 72%;
+  }
+
+  .div-cards {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+  }
+
+  .card {
+    width: 50px;
+    height: 50px;
+  }
+
+  mat-icon {
+    font-size: 25px;
+  }
+
+  .card h2 {
+    font-size: 15px;
+  }
+
+}

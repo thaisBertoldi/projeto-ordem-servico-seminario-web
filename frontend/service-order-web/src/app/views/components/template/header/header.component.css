@@ -22,3 +22,13 @@
   font-size: 15px;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.logo {
+  width: 60px;
+}
+
+@media (max-width: 500px) {
+  .gap {
+    display: none;
+  }
+}

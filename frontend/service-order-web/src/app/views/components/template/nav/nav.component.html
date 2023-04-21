@@ -1,30 +1,33 @@
 <mat-drawer-container class="container" autosize>
   <mat-drawer #drawer class="sidenav" mode="side">
     <mat-nav-list class="nav-list">
-      <a mat-list-item routerLink="/">
+      <a mat-list-item routerLink="/" (click)="drawer.toggle()">
         <i class="material-icons">home</i>
         <span>Home</span>
       </a>
-      <a mat-list-item routerLink="/employee">
+      <a mat-list-item routerLink="/employee" (click)="drawer.toggle()">
         <i class="material-icons">work</i>
         <span>Técnico</span>
       </a>
-      <a mat-list-item routerLink="/customer">
+      <a mat-list-item routerLink="/customer" (click)="drawer.toggle()">
         <i class="material-icons">person_search</i>
         <span>Cliente</span>
       </a>
       <a mat-list-item [matMenuTriggerFor]="menu">
         <mat-menu #menu="matMenu">
-          <a routerLink="service-order" mat-menu-item>Abertas ou Em Anadamento</a>
-          <a routerLink="service-order/closed" mat-menu-item>Encerradas</a>
+          <a routerLink="service-order" mat-menu-item (click)="drawer.toggle()">Abertas ou Em Anadamento</a>
+          <a routerLink="service-order/closed" mat-menu-item (click)="drawer.toggle()">Encerradas</a>
         </mat-menu>
         <i class="material-icons">person_pin</i>
         <span>Ordens de Serviço</span>
       </a>
-      <a mat-list-item routerLink="/admTools" *ngIf="showNavAdmin">
+      <a mat-list-item routerLink="/admTools" *ngIf="showNavAdmin" (click)="drawer.toggle()">
         <i class="material-icons">settings</i>
         <span>Ferramentas do ADM</span>
       </a>
+      <button mat-icon-button (click)="drawer.toggle()" class="icon-back">
+        <mat-icon>more_vert</mat-icon>
+      </button>
     </mat-nav-list>
   </mat-drawer>
 
