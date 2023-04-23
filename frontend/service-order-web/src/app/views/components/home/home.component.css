@@ -32,23 +32,110 @@ mat-icon {
 }
 
 .div-statistics {
-  height: 50%;
-  margin-left: 60px;
-  margin-top: 2%;
-  display: flex;
+  margin: 2% 60px 0px;
+  display: grid;
 }
 
-.demo-inline-calendar-card {
-  width: 300px;
+.section-topics {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, 120px);
 }
 
 .margin-topics {
-  margin: 8px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
+  padding: 30px 8px;
+  text-align: center;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  justify-content: center;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.section-topics :hover {
+  font-size: 1.2em;
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+
+.margin-topics mat-label {
+  color: black;
+}
+
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+::ng-deep .mat-form-field-infix {
+  width: 100px !important;
+}
+
+.div-work-img {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 800px;
+}
+
+.work-img {
+  width: 800px;
+}
+
+.div-vantagens {
+  height: 50%;
+  margin: 2% 60px 0px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.div-all-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 350px);
+}
+
+.card-vantagens{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 1200px) {
+
+  .work-img {
+    display: none;
+  }
 }
 
 @media (max-width: 500px) {
-  .div-statistics {
-    width: 72%;
+
+  .div-all-cards{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section-topics {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-vantagens{
+    display: flex;
+    flex-direction: column;
   }
 
   .div-cards {

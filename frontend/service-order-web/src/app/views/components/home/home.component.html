@@ -13,29 +13,57 @@
     <mat-icon>dns</mat-icon>
     <h2>Serviços</h2>
   </mat-card>
+
+  <div class="div-work-img">
+    <img src="../../../../assets/images/work.png" alt="" class="work-img" />
+  </div>
 </div>
 
 <div class="div-statistics">
   <mat-card class="card-topics">
     <mat-card-content>
-      <section>
-        <mat-form-field class="margin-topics" appearance="fill">
+      <section class="section-topics">
+        <mat-form-field class="margin-topics">
           <mat-label>Total Clientes</mat-label>
           <input matInput type="number" [(ngModel)]="customers" />
         </mat-form-field>
-        <mat-form-field class="margin-topics" appearance="fill">
+        <mat-form-field class="margin-topics">
           <mat-label>Total Técnicos</mat-label>
           <input matInput type="number" [(ngModel)]="employees" />
         </mat-form-field>
-        <mat-form-field class="margin-topics" appearance="fill">
+        <mat-form-field class="margin-topics">
           <mat-label>Ordens Abertas</mat-label>
           <input matInput type="number" [(ngModel)]="openOS" />
         </mat-form-field>
-        <mat-form-field class="margin-topics" appearance="fill">
+        <mat-form-field class="margin-topics">
           <mat-label>Ordens Encerradas</mat-label>
           <input matInput type="number" [(ngModel)]="closedOS" />
         </mat-form-field>
       </section>
     </mat-card-content>
   </mat-card>
+</div>
+
+<div class="div-vantagens">
+  <h2>Supere qualquer barreira para o seu crescimento</h2>
+  <p>Gerenciamento simples, completo e ilimitado a qualquer hora e lugar</p>
+  <div class="div-all-cards">
+    <div class="card-vantagens">
+      <img src="../../../../assets/images/ico-sistema.png" alt="" />
+      <p>Sistema de gestão 100% online</p>
+    </div>
+    <div class="card-vantagens">
+      <img src="../../../../assets/images/ico-implementacao.png" alt="" />
+      <p>Implementação fácil: ative e use</p>
+    </div>
+    <div class="card-vantagens">
+      <img src="../../../../assets/images/ico-seguranca.png" alt="" />
+      <p>Segurança e integridade de dados</p>
+    </div>
+    <div class="card-vantagens">
+      <img src="../../../../assets/images/ico-melhor.png" alt="" />
+      <p>A melhor equipe de suporte do setor</p>
+    </div>
+  </div>
+
 </div>
