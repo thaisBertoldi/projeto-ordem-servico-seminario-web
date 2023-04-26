@@ -25,6 +25,8 @@ export class LoginComponent implements OnInit {
   showRegister: Boolean;
   categorySelect: String;
   hasType: String;
+  showPassword: Boolean = false;
+  typePassword: String = 'password';
 
   category = new FormControl(null, Validators.required);
   selectFormControl = new FormControl('', Validators.required);
@@ -68,6 +70,11 @@ export class LoginComponent implements OnInit {
       password: [''],
     });
   }
+  
+  toggleShow() {
+    this.showPassword = !this.showPassword;
+    this.typePassword = this.showPassword ? 'text' : 'password';
+  }
 
   criarFormRegister() {
     this.form = this.formBuilder.group({
@@ -87,7 +94,7 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem('type', res.type.toString());
           sessionStorage.setItem('login', 'logado');
           this.showView = false;
-          this.router.navigate(['/']);
+          this.router.navigate(['/home']);
         } else {
           this.snack.open(`${'Login incorreto'}`, 'OK', {
             horizontalPosition: 'end',
@@ -127,6 +134,7 @@ export class LoginComponent implements OnInit {
       (resposta) => {
         service.message('Cliente criado com sucesso!');
         this.toggleRegister();
+        this.toggleShow();
       },
       (err) => {
         if (err.error.message.match('já cadastrado')) {

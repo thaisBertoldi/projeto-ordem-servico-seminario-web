@@ -1,29 +1,29 @@
 <mat-drawer-container class="container" autosize>
   <mat-drawer #drawer class="sidenav" mode="side">
     <mat-nav-list class="nav-list">
-      <a mat-list-item routerLink="/" (click)="drawer.toggle()">
+      <a mat-list-item routerLink="/home" routerLinkActive="active-link" (click)="drawer.toggle()">
         <i class="material-icons">home</i>
-        <span>Home</span>
+        <h4 class="fromLeft">Home</h4>
       </a>
-      <a mat-list-item routerLink="/employee" (click)="drawer.toggle()">
+      <a mat-list-item routerLink="/employee" routerLinkActive="active-link" (click)="drawer.toggle()">
         <i class="material-icons">work</i>
-        <span>Técnico</span>
+        <h4>Técnico</h4>
       </a>
-      <a mat-list-item routerLink="/customer" (click)="drawer.toggle()">
+      <a mat-list-item routerLink="/customer" routerLinkActive="active-link" (click)="drawer.toggle()">
         <i class="material-icons">person_search</i>
-        <span>Cliente</span>
+        <h4>Cliente</h4>
       </a>
-      <a mat-list-item [matMenuTriggerFor]="menu">
+      <a mat-list-item [matMenuTriggerFor]="menu" routerLinkActive="active-link">
         <mat-menu #menu="matMenu">
-          <a routerLink="service-order" mat-menu-item (click)="drawer.toggle()">Abertas ou Em Anadamento</a>
+          <a routerLink="service-order" mat-menu-item (click)="drawer.toggle()">Abertas ou em Andamento</a>
           <a routerLink="service-order/closed" mat-menu-item (click)="drawer.toggle()">Encerradas</a>
         </mat-menu>
         <i class="material-icons">person_pin</i>
-        <span>Ordens de Serviço</span>
+        <h4>Ordens de Serviço</h4>
       </a>
-      <a mat-list-item routerLink="/admTools" *ngIf="showNavAdmin" (click)="drawer.toggle()">
+      <a mat-list-item routerLink="/admTools" *ngIf="showNavAdmin" (click)="drawer.toggle()" routerLinkActive="active-link">
         <i class="material-icons">settings</i>
-        <span>Ferramentas do ADM</span>
+        <h4>Ferramentas do ADM</h4>
       </a>
       <button mat-icon-button (click)="drawer.toggle()" class="icon-back">
         <mat-icon>more_vert</mat-icon>

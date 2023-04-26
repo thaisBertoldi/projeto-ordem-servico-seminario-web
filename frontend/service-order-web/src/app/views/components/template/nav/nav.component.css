@@ -7,8 +7,27 @@ i {
     color: white;
 }
 
-span {
+.active-link {
+    background-color: #FAFAFA;
+}
+
+.active-link:hover {
+    background-color: #FAFAFA;
+}                              
+
+.active-link h4, .active-link i {
+    color: #151515;
+}
+
+.active-link h4:hover {
+    color: #3E3EDF;
+}
+
+h4 {
+    display:inline-block;
     color: white;
+    margin: 0;
+    position:relative;
 }
 
 button {

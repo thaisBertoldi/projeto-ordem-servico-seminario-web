@@ -1,129 +1,138 @@
 .create {
-    width: 90%;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 30px;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 30px;
 }
 
 .create h1 {
-    text-align: center;
-    font-size: 2rem;
+  text-align: center;
+  font-size: 2rem;
 }
 
 .create button {
-    width: 20%;
+  width: 20%;
 }
 
 .container {
-    width: 90%;
-    margin-right: auto;
-    margin-left: auto;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 table {
-    width: 100%;
+  width: 100%;
 }
 
 #edit {
-    color: rgb(62, 62, 223);
+  color: rgb(62, 62, 223);
 }
 
 #delete {
-    color: rgb(210, 75, 79);
-    padding-left: 2rem;
+  color: rgb(210, 75, 79);
+  padding-left: 2rem;
 }
 
-
 td.baixa {
-    color: rgb(114, 224, 114);
+  color: rgb(114, 224, 114);
 }
 
 td.media {
-    color: rgb(216, 216, 94);
+  color: rgb(216, 216, 94);
 }
 
 td.alta {
-    color: rgb(210, 75, 79);
+  color: rgb(210, 75, 79);
 }
 
 .div-button-create {
-    display: flex;
-    justify-content: center;
-    margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
 }
 
 .loading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
 }
 
 .button-create {
-    background-color: #1c64ff;
-    color: white;
+  background-color: #1c64ff;
+  color: white;
 }
 
 .button-encerrar {
-    width: 100px;
-    height: 30px;
-    border-radius: 10px;
-    outline: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    background-color: #ff512f;
-    font-size: 15px;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  background-color: #ff512f;
+  font-size: 15px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .button-atualizar {
-    width: 100px;
-    height: 30px;
-    border-radius: 10px;
-    outline: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    margin-right: 15px;
-    background-color: #1c64ff;
-    font-size: 15px;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-@media  (max-width: 1000px) {
-    .cdk-column-openingDate, .cdk-column-priority, .cdk-column-status {
-        display: none;
-    }
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 15px;
+  background-color: #1c64ff;
+  font-size: 15px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .button-ghost {
-    width: 100px;
-    height: 30px;
-    outline: none;
-    border: none;
-    margin-right: 15px;
-    background-color: white;
+  width: 100px;
+  height: 30px;
+  outline: none;
+  border: none;
+  margin-right: 15px;
+  background-color: white;
+}
+
+.spanNameColumn {
+  display: none;
 }
 
 @media (max-width: 500px) {
+  .container {
+    width: 70%;
+  }
 
-    .container {
-        width: 70%;
-    }
+  .mat-row {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+  tr.mat-row {
+    height: 200px;
+    display: flex;
+    padding-left: 30px;
+  }
 
-    .mat-row {
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-    }
-    tr.mat-row  {
-        height: 100px;
-        display: flex;
-        padding-left: 30px;
-    }
-    tr.mat-header-row {
-        display: none;
-    }
-    
+  td.mat-cell:first-of-type {
+    padding: 10px 0;
+  }
+
+  tr.mat-header-row {
+    display: none;
+  }
+
+  .spanNameColumn {
+    display: inline;
+    font-weight: bold;
+  }
+
+  ::ng-deep .mat-paginator-range-label {
+    margin: 0 !important;
+  }
 }

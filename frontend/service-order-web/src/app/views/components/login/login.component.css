@@ -118,6 +118,18 @@ input:-webkit-autofill:focus {
   display: none;
 }
 
+.input-visibility {
+  display: grid;
+  grid-template-columns: 100% 0;
+  position: relative;
+}
+
+.visibility {
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+}
+
 @media (max-width: 500px) {
   .form-login {
     width: 90%;

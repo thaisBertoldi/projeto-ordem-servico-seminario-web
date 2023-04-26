@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ModalDeleteComponent } from '../views/components/modal-delete/modal-delete.component';
 import { ModalEncerrarComponent } from '../views/components/modal-encerrar/modal-encerrar.component';
 import { ModalAtualizarComponent } from '../views/components/modal-atualizar/modal-atualizar.component';
+import { ModalConfirmarLogoutComponent } from '../views/components/modal-confirmar-logout/modal-confirmar-logout.component';
 
 @Injectable({
   providedIn: 'root'
@@ -36,4 +37,12 @@ export class ModalService {
     });
     dialogRef.afterClosed().subscribe(result => {});
   }
+
+  confirmarLogout() {
+    const dialogRef = this.dialog.open(ModalConfirmarLogoutComponent, {
+      width: '350px',
+    });
+    dialogRef.afterClosed().subscribe(result => {});
+  }
+  
 }

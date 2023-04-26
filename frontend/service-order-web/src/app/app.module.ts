@@ -45,6 +45,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ModalEncerrarComponent } from './views/components/modal-encerrar/modal-encerrar.component';
 import { AdmPageComponent } from './views/components/adm-page/adm-page.component';
 import { ModalAtualizarComponent } from './views/components/modal-atualizar/modal-atualizar.component';
+import { RedirectLogoutComponent } from './src/views/components/redirect-logout/redirect-logout.component';
+import { AuthGuardAdmin } from './services/auth-guard-admin-service';
+import { ModalConfirmarLogoutComponent } from './views/components/modal-confirmar-logout/modal-confirmar-logout.component';
+import { NotFoundComponent } from './views/components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +73,9 @@ import { ModalAtualizarComponent } from './views/components/modal-atualizar/moda
     ModalEncerrarComponent,
     AdmPageComponent,
     ModalAtualizarComponent,
+    RedirectLogoutComponent,
+    ModalConfirmarLogoutComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -97,7 +104,8 @@ import { ModalAtualizarComponent } from './views/components/modal-atualizar/moda
     MatProgressSpinnerModule
   ],
   providers: [
-    AuthGuard
+    AuthGuard,
+    AuthGuardAdmin
   ],
   bootstrap: [AppComponent]
 })

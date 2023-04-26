@@ -20,13 +20,17 @@
 
       <div class="form-group">
         <label for="password">Password</label>
-        <input
-          type="password"
+        <div class="input-visibility">
+          <input
+          type={{typePassword}}
           id="password"
           class="form-control"
           formControlName="password"
           requiredminlength="8"
-        />
+          />
+          <mat-icon class="visibility" *ngIf="showPassword" (click)="toggleShow()">visibility</mat-icon>
+          <mat-icon class="visibility" *ngIf="!showPassword" (click)="toggleShow()">visibility_off</mat-icon>
+        </div>
       </div>
 
       <div class="div-button">
@@ -89,15 +93,20 @@
       </mat-form-field>
 
       <div class="form-group">
-        <label for="password">password</label>
-        <input
-          [(ngModel)]="person.password"
-          type="password"
-          id="password"
-          class="form-control"
-          formControlName="password"
-          requiredminlength="8"
-        />
+        <label for="password">Password</label>
+        <div class="input-visibility">
+          <input
+            [(ngModel)]="person.password"
+            type={{typePassword}}
+            id="password"
+            class="form-control"
+            formControlName="password"
+            requiredminlength="8"
+          />
+          <mat-icon class="visibility" *ngIf="showPassword" (click)="toggleShow()">visibility</mat-icon>
+          <mat-icon class="visibility" *ngIf="!showPassword" (click)="toggleShow()">visibility_off</mat-icon>
+        </div>
+
       </div>
 
       <div class="div-button">

@@ -15,13 +15,16 @@ import { OsClosedComponent } from './views/components/os/os-closed/os-closed.com
 import { LoginComponent } from './views/components/login/login.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { AdmPageComponent } from './views/components/adm-page/adm-page.component';
+import { RedirectLogoutComponent } from './views/components/redirect-logout/redirect-logout.component';
+import { NotFoundComponent } from './views/components/not-found/not-found.component';
+import { AuthGuardAdmin } from './services/auth-guard-admin-service';
 
 const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
   },{
-    path: '',
+    path: 'home',
     component: HomeComponent,
     canActivate: [AuthGuard]
   },{
@@ -71,7 +74,13 @@ const routes: Routes = [
   },{
     path: 'admTools',
     component: AdmPageComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuardAdmin]
+  },{
+    path: 'redirect-logout',
+    component: RedirectLogoutComponent
+  },{
+    path: '**',
+    component: NotFoundComponent
   }
 ];
 

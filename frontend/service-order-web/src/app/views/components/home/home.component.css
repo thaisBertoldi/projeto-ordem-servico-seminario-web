@@ -138,23 +138,27 @@ mat-icon {
     flex-direction: column;
   }
 
-  .div-cards {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 15px;
+  .div-vantagens {
+    background-color: #FAFAFA;
+    box-shadow: none;
   }
 
-  .card {
-    width: 50px;
-    height: 50px;
+  .div-cards {
+    display: none;
   }
 
   mat-icon {
     font-size: 25px;
   }
 
-  .card h2 {
-    font-size: 15px;
+  mat-card {
+    width: 100%;
+    background-color: #FAFAFA;
+    box-shadow: none;
+  }
+  
+  .margin-topics {
+    box-shadow: none;
   }
 
 }
