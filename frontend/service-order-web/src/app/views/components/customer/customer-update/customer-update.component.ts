@@ -52,9 +52,9 @@ export class CustomerUpdateComponent implements OnInit {
         this.service.message('Cliente atualizado com sucesso!');
       },
       (err) => {
-        if (err.error.message.match('já cadastrado')) {
-          this.service.message(err.error.message);
-        } else if (err.error.errors[0].message === "número do registro de contribuinte individual brasileiro (CPF) inválido") {
+        if (err.error?.message.match('já cadastrado')) {
+          this.service.message(err.error?.message);
+        } else if (err.error.errors[0]?.message === "número do registro de contribuinte individual brasileiro (CPF) inválido") {
           this.service.message('CPF inválido');
         }
       }

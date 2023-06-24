@@ -132,15 +132,16 @@ export class LoginComponent implements OnInit {
         : this.customerService;
     service.create(this.person).subscribe(
       (resposta) => {
-        service.message('Cliente criado com sucesso!');
+        service.message('Usuário criado com sucesso!');
         this.toggleRegister();
         this.toggleShow();
       },
       (err) => {
-        if (err.error.message.match('já cadastrado')) {
-          service.message(err.error.message);
+        service.message(err.error.message);
+        if (err.error.message?.match('já cadastrado')) {
+          service.message(err.error?.message);
         } else if (
-          err.error.errors[0].message ===
+          err.error.errors[0]?.message ===
           'número do registro de contribuinte individual brasileiro (CPF) inválido'
         ) {
           service.message('CPF inválido');
